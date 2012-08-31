@@ -12,7 +12,7 @@ public class PaymentService {
 		try {
 			if (creditCardService.pay(creditCardNumnber,
 					purchase.getTotalPrice())) {
-				points.calculatePoints(purchase.getTotalPrice());
+				customer.addPoints(points.calculatePoints(purchase.getTotalPrice()));
 				purchase.setStatus(PurchaseStatus.APPROVED);
 			} else {
 				purchase.setStatus(PurchaseStatus.REJECTED);
