@@ -20,12 +20,11 @@ public class IvaCalculatorTest {
 	
 	@Test
 	public void testCalculateIva() {
-		IvaCalculator iva = Mockito.mock(IvaCalculator.class);
+		IvaCalculator iva = new IvaCalculator();
 		Purchase p = BillingCalculator.calculateTotalPurchase(customer, "EL-001,FU-007");
-		
-		//Mocking external service behavior
-		Mockito.when(iva.CalculateIva(p.getTotalPrice())).thenReturn(p.getTotalPrice().multiply(new BigDecimal(0.16)));
+	    BigDecimal totalLessIva=p.getTotalPrice();
 		p.setTotalPriceWithIva(iva);
+		assertEquals("total",totalLessIva.add(totalLessIva.multiply(new BigDecimal(0.16))),p.getTotalPrice());
 	 
 	}
 

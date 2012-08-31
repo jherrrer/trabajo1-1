@@ -84,7 +84,8 @@ public class Purchase {
 	}
 	
 	public void setTotalPriceWithIva(IvaCalculator iva){
-		iva.CalculateIva(totalPrice);
+		totalPrice=totalPrice.add(iva.CalculateIva(totalPrice));
+		
 	}
 
 	public String getCode() {
