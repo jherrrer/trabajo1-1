@@ -26,7 +26,7 @@ public class BillingCalculatorTest {
 		Purchase p = BillingCalculator.calculateTotalPurchase(customer, "EL-001,FU-007");
 		
 		
-		assertEquals("total",mp.get("EL-001").subtract(mp.get("EL-001").multiply(new BigDecimal(0.2))).add(mp.get("FU-007").subtract(mp.get("FU-007").multiply(new BigDecimal(0.1)))),p.getTotalPrice());
+		assertEquals("total",mp.get("EL-001").subtract(mp.get("EL-001").multiply(new BigDecimal(0.5))).add(mp.get("FU-007").subtract(mp.get("FU-007").multiply(new BigDecimal(0.1)))),p.getTotalPrice());
 	}
 
 }
