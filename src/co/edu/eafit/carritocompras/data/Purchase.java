@@ -5,6 +5,7 @@ import java.util.Calendar;
 import java.util.List;
 
 import co.edu.eafit.carritocompras.data.util.ChangeStatusException;
+import co.edu.eafit.carritocompras.service.IvaCalculator;
 
 public class Purchase {
 
@@ -80,6 +81,10 @@ public class Purchase {
 
 	public void setTotalPrice(BigDecimal totalPrice) {
 		this.totalPrice = totalPrice;
+	}
+	
+	public void setTotalPriceWithIva(IvaCalculator iva){
+		iva.CalculateIva(totalPrice);
 	}
 
 	public String getCode() {
