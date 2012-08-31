@@ -31,7 +31,10 @@ public class BillingCalculator {
 		}
 		
 		purchase.setProducts(products);
-		purchase.setTotalPrice(total);
+		if(customer.getPoints()>=1000){
+			purchase.setTotalPrice(total.subtract((total.multiply(new BigDecimal(0.02)))));
+		}else purchase.setTotalPrice(total);
+		
 		try {
 			purchase.setStatus(PurchaseStatus.PENDING);
 		} catch (ChangeStatusException e) {
