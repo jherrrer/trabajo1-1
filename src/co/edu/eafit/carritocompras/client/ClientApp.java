@@ -7,6 +7,7 @@ import co.edu.eafit.carritocompras.data.Purchase;
 import co.edu.eafit.carritocompras.service.BillingCalculator;
 import co.edu.eafit.carritocompras.service.GenericCreditCardService;
 import co.edu.eafit.carritocompras.service.PaymentService;
+import co.edu.eafit.carritocompras.service.PointsCalculator;
 
 public class ClientApp {
 
@@ -21,7 +22,7 @@ public class ClientApp {
 		customer1.getPurchases().add(purchase);
 		
 		//pay purchase
-		new PaymentService().pay(customer1, purchase, "11112222", new GenericCreditCardService());
+		new PaymentService().pay(customer1, purchase, "11112222", new GenericCreditCardService(),new PointsCalculator());
 	}
 
 }

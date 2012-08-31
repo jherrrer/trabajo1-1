@@ -6,7 +6,7 @@ import java.math.BigDecimal;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.mockito.Mockito;
+
 
 import co.edu.eafit.carritocompras.data.Customer;
 import co.edu.eafit.carritocompras.data.Purchase;

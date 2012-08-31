@@ -51,6 +51,7 @@ public class Purchase {
 		this.code = (int) (Math.random() * 1000000) + "";
 	}
 
+
 	public Calendar getDate() {
 		return date;
 	}
